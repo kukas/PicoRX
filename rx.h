@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "nco.pio.h"
 
 #include "pico/stdlib.h"
 #include "pico/sem.h"
@@ -52,9 +51,9 @@ class rx
 
 
   // Choose which PIO instance to use (there are two instances)
-  PIO pio;
-  uint offset;
-  uint sm;
+  // PIO pio;
+  // uint offset;
+  // uint sm;
 
   //capture buffer DMA
   static int capture_dma;

@@ -82,8 +82,8 @@ void rx::apply_settings()
       {
         //apply frequency
         tuned_frequency_Hz = settings_to_apply.tuned_frequency_Hz;
-        nco_frequency_Hz = nco_program_init(pio, sm, offset, tuned_frequency_Hz);
-        offset_frequency_Hz = tuned_frequency_Hz - nco_frequency_Hz;
+        // nco_frequency_Hz = nco_program_init(pio, sm, offset, tuned_frequency_Hz);
+        // offset_frequency_Hz = tuned_frequency_Hz - nco_frequency_Hz;
 
         if(tuned_frequency_Hz > 16.0e6)
         {
@@ -117,7 +117,7 @@ void rx::apply_settings()
         }
 
 
-        rx_dsp_inst.set_frequency_offset_Hz(offset_frequency_Hz);
+        // rx_dsp_inst.set_frequency_offset_Hz(offset_frequency_Hz);
 
         //apply CW sidetone
         rx_dsp_inst.set_cw_sidetone_Hz(settings_to_apply.cw_sidetone_Hz);
@@ -157,9 +157,9 @@ rx::rx(rx_settings & settings_to_apply, rx_status & status) : settings_to_apply(
     suspend = false;
 
     //Configure PIO to act as quadrature oscilator
-    pio = pio0;
-    offset = pio_add_program(pio, &hello_program);
-    sm = pio_claim_unused_sm(pio, true);
+    // pio = pio0;
+    // offset = pio_add_program(pio, &hello_program);
+    // sm = pio_claim_unused_sm(pio, true);
 
     //configure SMPS into power save mode
     const uint PSU_PIN = 23;
