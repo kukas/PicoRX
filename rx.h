@@ -11,6 +11,7 @@
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 #include "hardware/dma.h"
+#include <sys/time.h>
 
 #include "rx_definitions.h"
 #include "rx_dsp.h"
